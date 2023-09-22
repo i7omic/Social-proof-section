@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+
+$font-family: 'League Spartan';
+
+$main-h-cl: #512051;
+$main-p-cl: #927B91;
+
+$review-bg: #F7F2F7;
+$review-font-cl: #512051;
+
+$card-bg: #512051;
+$card-font-h-p-cl: #fff; 
+$card-font-span-cl: #EE69A4;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .cloud-top {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        &-img-big {
+            width: 584px;
+            height: 362px;
+        }
+
+        &-img-small {
+            display: none;
+        }
+    }
+    
+    .cloud-bottom {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        &-img-big {
+            width: 1085px;
+            height: 673px;
+        }
+        &-img-small {
+            display: none;
+        }
+    }
+
+    .content-cont {
+        width: 1110px;
+        display: flex;
+        flex-direction: column;
+        gap: 71px;
+        font-family: $font-family;
+
+        &-top {
+            height: 245px;
+            display: flex;
+            justify-content: space-between;
+
+            &-left {
+                width: 445px;
+
+                h1 {
+                    font-size: 56px;
+                    font-weight: 700;
+                    line-height: 48px;
+                    letter-spacing: -2px;
+                    color: $main-h-cl;
+                }
+
+                p {
+                    padding-top: 16px;
+                    font-size: 19px;
+                    font-weight: 500;
+                    line-height: 25px;
+                    letter-spacing: -0.6px;
+                    color: $main-p-cl;
+                }
+
+            }
+
+            &-right {
+                width: 540px;
+                height: 200px;
+                display: flex;
+                flex-direction: column;
+                padding-top: 27px;
+                gap: 16px;
+
+                .rev-container {
+                    display: flex;
+                    align-items: center;
+                    width: 445px;
+                    height: 56px;
+                    background-color: $review-bg;
+                    border-radius: 8px;
+                    padding: 0 32px;
+                    gap: 32.5px;
+
+                    .stars {
+                        gap: 8.5px;
+                    }
+
+                    & > h2 {
+                        color: $review-font-cl;
+                        font-size: 17px;
+                        font-weight: 700;
+                    }
+                }
+
+                .row1 {
+                    align-self: flex-start;
+                }
+                .row2 {
+                    align-self: center;
+                }
+                .row3 {
+                    align-self: flex-end;
+                }
+            }
+        }
+        
+        &-bottom {
+            height: 266px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+
+
+            &-elem {
+                width: 350px;
+                height: 234px;
+                border-radius: 8px;
+                background-color: $card-bg;
+                padding: 32px;
+
+                .card-top {
+                    display: flex;
+                    align-items: center;
+                    gap: 23px;
+
+                    .profile {
+                        width: 40px;
+                        border-radius: 50%;
+                        overflow: hidden;
+
+                        .profile-img {
+                            width: 100%;
+                        }
+                    }
+
+                    .profile-info {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 4px;
+                        h2 {
+                            color: $card-font-h-p-cl;
+                            font-size: 17px;
+                            font-weight: 700;
+                        }
+                        span {
+                            font-size: 17px;
+                            color: $card-font-span-cl;
+                            font-weight: 400;
+                        }
+                    }
+                }
+
+                p {
+                    width: 286px;
+                    padding-top: 31px;
+                    font-size: 17px;
+                    font-weight: 500;
+                    line-height: 22px;
+                    letter-spacing: -0.3px;
+                    color: $card-font-h-p-cl;
+                }
+            }
+
+            .col1 {
+                align-self: flex-start;
+            }
+            .col2 {
+                align-self: center;
+            }
+            .col3 {
+                align-self: flex-end;
+            }
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    body {
+        height: unset;
+    
+        .cloud-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            &-img-small {
+                display: unset;
+            }
+    
+            &-img-big {
+                display: none;
+            }
+
+        }
+        
+        .cloud-bottom {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            
+            &-img-small {
+                display: unset;
+                border: 1px solid red;
+            }
+
+            &-img-big {
+                display: none;
+            }
+        }
+    
+        .content-cont {
+            padding: 0 24px;
+            width: 100%;
+            gap: 49px;
+    
+            &-top {
+                height: unset;
+                display: flex;
+                flex-direction: column;
+                gap: 39px;
+    
+                &-left {
+                    padding-top: 82px;
+                    width: 100%;
+                    text-align: center;
+    
+                    & > h1 {
+                        font-size: 40px;
+                        line-height: 32px;
+                        letter-spacing: -1.5px;
+                        color: $main-h-cl;
+                    }
+                }
+    
+                &-right {
+                    padding-top: unset;
+                    width: 100%;
+                    height: unset;
+    
+                    .rev-container {
+                        justify-content: center;
+                        flex-direction: column;
+                        width: 100%;
+                        height: 78px;
+                        gap: 15px;
+                    }
+    
+                    .row1,
+                    .row2,
+                    .row3 {
+                        align-self: unset;
+                    }
+                }
+            }
+            
+            &-bottom {
+                height: unset;
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+    
+                &-elem {
+                    width: 100%;
+                    height: unset;
+                    padding: 40px 32px 35px;
+    
+                    p {
+                        width: 100%;
+                        padding-top: 23px;
+                    }
+                }
+    
+                .col1,
+                .col2 {
+                    align-self: unset;
+                }
+                .col3 {
+                    align-self: unset;
+                    margin-bottom: 100px;
+                }
+            }
+        }
+    }
+}
